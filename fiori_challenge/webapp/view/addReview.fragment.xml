@@ -1,0 +1,155 @@
+<core:FragmentDefinition id="_addReviewFrag_ID"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:c="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:ui="sap.ui">
+
+    <Dialog id="_dialogFRAG_ID" title="Reviews" icon="sap-icon://add-product">
+        <f:SimpleForm id="reviewForm_ID" editable="true" class="editableForm sapUiTinyMargin" layout="ResponsiveLayout" title="Asset Review Form" width="800px">
+            <f:content>
+                <core:Title id="_IDGenTitle1" text="Fill in Details on the Asset and hit Save"></core:Title>
+                <VBox>
+                    <HBox>
+                        <!-- Basic Info -->
+                        <VBox width="20%" class="sapUiTinyMargin">
+                            <ComboBox xmlns="sap.m" id="assetNameCombo" value="Asset">
+                                <items>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemasset-0-key" text="Drone Quadcopter" id="assetItem0"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemasset-1-key" text="X Series Forklift" id="assetItem1"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemasset-2-key" text="Ferrari F90" id="assetItem2"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemasset-3-key" text="4G63 Engine" id="assetItem3"/>
+                                </items>
+                            </ComboBox>
+                        </VBox>
+                        <VBox width="20%" class="sapUiTinyMargin">
+                            <ComboBox xmlns="sap.m" id="reviewNameCombo" value="Reviewed By">
+                                <items>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemrevie-0-key" text="Robert Jones" id="rjReview"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemrevie-1-key" text="Layla Parker" id="lpReview"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemrevie-2-key" text="Ronald McDoogle" id="rmReview"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemrevie-3-key" text="James Smith" id="jsReview"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemrevie-3-key" text="Sarah Rose" id="srReview"/>
+                                </items>
+                            </ComboBox>
+                        </VBox>
+                        <VBox width="60%" class="sapUiTinyMargin">
+                            <DatePicker id="_IDReviewDateFrag" value="{/SubmissionDate}" placeholder="Date of the Asset Review ..." class=""></DatePicker>
+                        </VBox>
+                    </HBox>
+
+                    <!-- Suitability -->
+                    <HBox>
+                        <VBox width="80%" class="sapUiTinyMargin">
+                            <Input id="_IDSuitableFrag" value="{/SuitabilityComment}" placeholder="Suitability ..." class=""/>
+                        </VBox>
+                        <VBox width="20%" class="sapUiTinyMargin">
+                            <ComboBox xmlns="sap.m" id="SuitabilityRateCombo" value="Rating">
+                                <items>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemSuit-0-key" text="0" id="suitRate0"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemSuit-1-key" text="1" id="suitRate1"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemSuit-2-key" text="2" id="suitRate2"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemSuit-3-key" text="3" id="suitRate3"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemSuit-4-key" text="4" id="suitRate4"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemSuit-5-key" text="5" id="suitRate5"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemSuit-6-key" text="6" id="suitRate6"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemSuit-7-key" text="7" id="suitRate7"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemSuit-8-key" text="8" id="suitRate8"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemSuit-9-key" text="9" id="suitRate9"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemSuit-10-key" text="10" id="suitRate10"/>
+                                </items>
+                            </ComboBox>
+                        </VBox>
+                    </HBox>
+
+                    <!-- Value -->
+                    <HBox>
+                        <VBox width="80%" class="sapUiTinyMargin">
+                            <Input id="_IDValueFrag" value="{/ValueComment}" placeholder="Value ..." class=""/>
+                        </VBox>
+                        <VBox width="20%" class="sapUiTinyMargin">
+                            <ComboBox xmlns="sap.m" id="ValueRateCombo" value="Rating">
+                                <items>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemVal-0-key" text="0" id="valRate0"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemVal-1-key" text="1" id="valRate1"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemVal-2-key" text="2" id="valRate2"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemVal-3-key" text="3" id="valRate3"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemVal-4-key" text="4" id="valRate4"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemVal-5-key" text="5" id="valRate5"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemVal-6-key" text="6" id="valRate6"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemVal-7-key" text="7" id="valRate7"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemVal-8-key" text="8" id="valRate8"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemVal-9-key" text="9" id="valRate9"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemVal-10-key" text="10" id="valRate10"/>
+                                </items>
+                            </ComboBox>
+                        </VBox>
+                    </HBox>
+
+                    <!-- Durability -->
+                    <HBox>
+                        <VBox width="80%" class="sapUiTinyMargin">
+                            <Input id="_IDDurabilityFrag" value="{/DurabilityComment}" placeholder="Durability ..." class=""/>
+                        </VBox>
+                        <VBox width="20%" class="sapUiTinyMargin">
+                            <ComboBox xmlns="sap.m" id="DurabRateCombo" value="Rating">
+                                <items>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemDur-0-key" text="0" id="durRate0"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemDur-1-key" text="1" id="durRate1"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemDur-2-key" text="2" id="durRate2"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemDur-3-key" text="3" id="durRate3"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemDur-4-key" text="4" id="durRate4"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemDur-5-key" text="5" id="durRate5"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemDur-6-key" text="6" id="durRate6"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemDur-7-key" text="7" id="durRate7"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemDur-8-key" text="8" id="durRate8"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemDur-9-key" text="9" id="durRate9"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemDur-10-key" text="10" id="durRate10"/>
+                                </items>
+                            </ComboBox>
+                        </VBox>
+                    </HBox>
+
+                    <!-- Longevity -->
+                    <HBox>
+                        <VBox width="80%" class="sapUiTinyMargin">
+                            <Input id="_IDLongevityFrag" value="{/LongevityComment}" placeholder="Longevity ..." class=""/>
+                        </VBox>
+                        <VBox width="20%" class="sapUiTinyMargin">
+                            <ComboBox xmlns="sap.m" id="LongRateCombo" value="Rating">
+                                <items>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemLong-0-key" text="0" id="longRate0"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemLong-1-key" text="1" id="longRate1"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemLong-2-key" text="2" id="longRate2"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemLong-3-key" text="3" id="longRate3"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemLong-4-key" text="4" id="longRate4"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemLong-5-key" text="5" id="longRate5"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemLong-6-key" text="6" id="longRate6"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemLong-7-key" text="7" id="longRate7"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemLong-8-key" text="8" id="longRate8"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemLong-9-key" text="9" id="longRate9"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="itemLong-10-key" text="10" id="longRate10"/>
+                                </items>
+                            </ComboBox>
+                        </VBox>
+                    </HBox>
+
+                    <!-- Summary -->
+                    <HBox>
+                        <VBox width="100%" class="sapUiTinyMargin">
+                            <Input id="_IDSummaryFrag" value="{/LongevityComment}" placeholder="Summarise the Asset ..." class=""/>
+                        </VBox>
+                    </HBox>
+
+                    <!-- Save/Cancel Buttons -->
+                    <HBox id="_IDGenHBox1" width="100%" justifyContent="End" class="sapUiTinyMargin">
+                        <Button id="saveBtnID" width="100px" press="saveBtn" type="Accept" text="Save" icon="sap-icon://basket" class="sapUiTinyMargin"></Button>
+                        <Button id="cancelBtnID" width="100px" press="cancelBtn" type="Reject" text="Cancel" icon="sap-icon://cancel" class="sapUiTinyMargin"></Button>
+                    </HBox>
+                    
+                </VBox>
+            </f:content>
+        </f:SimpleForm>
+    </Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,64 @@
+<mvc:View controllerName="T180.fiorichallenge.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:table="sap.ui.table"
+    xmlns:u="sap.ui.unified"
+    xmlns:c="sap.ui.core"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:m="sap.m" height="100%">
+    <m:Page id="_IDGenPage1" showHeader="false" enableScrolling="true" class="sapUiContentPadding">
+        <m:content>
+            <table:Table id="_StudentTableViewID" rows="{AssetReviewModel>/Reviews}" selectionMode="Single" visibleRowCount="" paste="onPaste" ariaLabelledBy="title">
+
+                <table:extension>
+                    <m:OverflowToolbar id="_IDGenOverflowToolbar1" style="Clear" class="sapUiTinyMarginBottom">
+                            <m:Title id="titleTableID" text="{i18n>pageTitle}" width="100%"/>
+                    </m:OverflowToolbar>
+                </table:extension>
+
+                <table:extension>
+                    <m:OverflowToolbar id="_IDGenOverflowToolbar2" style="Clear" class="sapUiTinyMarginBottom">
+                        <m:Title id="titleTable2ID" text="Total Reviewed: {= ${AssetReviewModel>/Reviews}.length}" width="100%"/>             
+                        <m:HBox id="box1" justifyContent="End" width="100%">
+                            <m:Button id="_addReviewBtn" press="openDialogReview" text="Add Review" icon="sap-icon://add"></m:Button>
+                        </m:HBox>
+                    </m:OverflowToolbar>
+                </table:extension>
+
+                <table:columns>
+                    <!-- Asset Name -->
+                    <table:Column id="_IDGenColumn1" width="auto" autoResizable="true" hAlign="Begin">
+                        <m:Label id="_IDGenLabel1" text="Asset Name"/>
+                        <table:template >
+                            <m:Text id="_IDGenText1" text="{AssetReviewModel>AssetName}" wrapping="false" />
+                        </table:template>
+                    </table:Column>
+                    <!-- Submitted By -->
+                    <table:Column id="_IDGenColumn2" width="auto" autoResizable="true" hAlign="Begin">
+                        <m:Label id="_IDGenLabel2" text="Submitted By"/>
+                        <table:template>
+                            <m:Text id="_IDGenText2" text="{AssetReviewModel>SubmittedBy}" wrapping="false" />
+                        </table:template>
+                    </table:Column>
+                    <!-- Submission Date -->
+                    <table:Column id="_IDGenColumn3" width="" hAlign="Begin">
+                        <m:Label id="_IDGenLabel3" text="Submission Date"/>
+                        <table:template>
+                            <m:Text id="_IDGenText3" text="{AssetReviewModel>SubmissionDate}" wrapping="false" />
+                        </table:template>
+                    </table:Column>
+                    <!-- Summary Comments -->
+                    <table:Column id="_IDGenColumn4" width="" hAlign="Begin">
+                        <m:Label id="_IDGenLabel4" text="Summary"/>
+                        <table:template>
+                            <m:Text id="_IDGenText4" text="{AssetReviewModel>SummaryComments}" wrapping="false" />
+                        </table:template>
+                    </table:Column>
+                    
+                </table:columns>
+
+            </table:Table>
+
+        </m:content>
+    </m:Page>
+</mvc:View>
