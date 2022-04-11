@@ -41,15 +41,15 @@ sap.ui.define([
                 this.getView().getModel("AssetReviewModel").setProperty("/CurrentDate", new Date());
             },
 
-            // Instantiate the Fragment instance, set data and open
-            openDialogReview: function (oEvent) {
+            // Instantiate the Fragment instance, set data and open from on click event
+            // Use the addDependent
+            openDialogReview: function () {
                 if (!this.newReviewDialog) {
+                    var oView = this.getView();
                     this.newReviewDialog = sap.ui.xmlfragment("T180.fiorichallenge.view.addReview", this);
-                    var oModel = new sap.ui.model.json.JSONModel();
-                    this.newReviewDialog.setModel(oModel);
+                    oView.addDependent(this.newReviewDialog);
                     this.newReviewDialog.open();
                 }
-                this.newReviewDialog.getModel().setData(this.Review);
                 this.newReviewDialog.open();
             },
 
@@ -59,13 +59,8 @@ sap.ui.define([
             },
 
             // Save Dialog Data, push/set to the AssetReview Model
-            saveBtn: function (oEvent) {
-                var oModel = oEvent.getSource().getModel();
-                var DialogData = oModel.getData();
-                
-                var test = this.getView().getModel("AssetReviewModel").setProperty("/Reviews/AssetName", "test");
-
-                MessageToast.show("Review Saved " + test);
+            saveBtn: function () {
+                MessageToast.show("Review Saved " + "test");
                 this.newReviewDialog.close();
             }
 
